@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Arquivos</title>
+</head>
+<body>
+    <h1>Gerador de Arquivos</h1>
+
+    <form action="/generate" method="post">
+        <label>Tamanho:</label>
+        <input type="number" name="size" required><br><br>
+
+        <label>Unidade:</label>
+        <select name="unit">
+            <option>bytes</option>
+            <option>KB</option>
+            <option>MB</option>
+            <option>GB</option>
+        </select><br><br>
+
+        <label>Tipo:</label>
+        <select name="ftype">
+            <option>txt</option>
+            <option>csv</option>
+            <option>pdf</option>
+            <option>docx</option>
+            <option>xlsx</option>
+            <option>bin</option>
+        </select><br><br>
+
+        <button type="submit">Gerar e baixar</button>
+    </form>
+</body>
+</html>
