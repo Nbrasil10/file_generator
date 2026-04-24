@@ -1,20 +1,16 @@
 from fastapi import FastAPI, Form
 from fastapi.responses import FileResponse, HTMLResponse
-from fastapi.templating import Jinja2Templates
-from fastapi.requests import Request
 
 from utils import to_bytes
 import generators as gen
 import os
 
 app = FastAPI()
-templates = Jinja2Templates(directory="app/templates")
 
 @app.get("/", response_class=HTMLResponse)
-def home(request: Request):
-    return templates.TemplateResponse(
-        "index.html", {"request": request}
-    )
+def home():
+    with open("templates/index.html", "r") as f:
+        return f.read()
 
 @app.post("/generate")
 def generate(
